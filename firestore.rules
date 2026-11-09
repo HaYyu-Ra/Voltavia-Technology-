@@ -1,0 +1,90 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isStaff() {
+      return isAuthenticated() && request.auth.token.role == 'staff';
+    }
+
+    // Customers collection
+    match /customers/{customerId} {
+      allow read: if isOwner(customerId) || isStaff();
+      allow create: if isOwner(customerId) && 
+                      (!request.resource.data.keys().hasAny(['role', 'isStaff']));
+      allow update: if isOwner(customerId) && 
+                      (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['role', 'isStaff']));
+      allow delete: if false; // Deletions handled by compliance admin
+    }
+
+    // Services Catalog (Read-only for clients, staff-managed)
+    match /services/{serviceId} {
+      allow read: if true;
+      allow write: if isStaff();
+    }
+
+    // Plans & Estimates (Read-only for clients, staff-managed)
+    match /plans/{planId} {
+      allow read: if true;
+      allow write: if isStaff();
+    }
+
+    // Quote Requests
+    match /quotes/{quoteId} {
+      allow read: if (isAuthenticated() && resource.data.customerId == request.auth.uid) || isStaff();
+      
+      // Client can create a quote with their own customerId, cannot set staff-approval fields
+      allow create: if isAuthenticated() && 
+                       request.resource.data.customerId == request.auth.uid &&
+                       (!request.resource.data.keys().hasAny(['approvedStatus', 'bindingPrice', 'staffNotes']));
+
+      // Client can update draft quotes, cannot alter customerId or staff fields
+      allow update: if (isAuthenticated() && resource.data.customerId == request.auth.uid &&
+                        !request.resource.data.diff(resource.data).affectedKeys().hasAny(['customerId', 'approvedStatus', 'bindingPrice', 'staffNotes']))
+                     || isStaff();
+
+      allow delete: if (isAuthenticated() && resource.data.customerId == request.auth.uid && resource.data.isDraft == true) || isStaff();
+    }
+
+    // Projects (Client read-only for their own projects; milestone progress managed by Voltavia staff)
+    match /projects/{projectId} {
+      allow read: if (isAuthenticated() && resource.data.customerId == request.auth.uid) || isStaff();
+      allow write: if isStaff();
+
+      // Nested Milestones
+      match /milestones/{milestoneId} {
+        allow read: if (isAuthenticated() && get(/databases/$(database)/documents/projects/$(projectId)).data.customerId == request.auth.uid) || isStaff();
+        allow write: if isStaff();
+      }
+    }
+
+    // Support Tickets
+    match /support_tickets/{ticketId} {
+      allow read: if (isAuthenticated() && resource.data.customerId == request.auth.uid) || isStaff();
+      allow create: if isAuthenticated() && 
+                       request.resource.data.customerId == request.auth.uid &&
+                       (!request.resource.data.keys().hasAny(['resolutionCode', 'closedBy']));
+      allow update: if (isAuthenticated() && resource.data.customerId == request.auth.uid &&
+                        !request.resource.data.diff(resource.data).affectedKeys().hasAny(['customerId', 'resolutionCode', 'closedBy']))
+                     || isStaff();
+      allow delete: if false;
+
+      // Thread Replies
+      match /replies/{replyId} {
+        allow read: if (isAuthenticated() && get(/databases/$(database)/documents/support_tickets/$(ticketId)).data.customerId == request.auth.uid) || isStaff();
+        allow create: if isAuthenticated() && 
+                         request.resource.data.senderId == request.auth.uid &&
+                         get(/databases/$(database)/documents/support_tickets/$(ticketId)).data.customerId == request.auth.uid;
+        allow update, delete: if false;
+      }
+    }
+  }
+}

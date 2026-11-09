@@ -1,0 +1,166 @@
+<resources>
+    <!-- Application & Brand -->
+    <string name="app_name">Voltavia</string>
+    <string name="app_full_name">Voltavia Client Portal</string>
+    <string name="company_name">Voltavia Technologies</string>
+    <string name="company_tagline">Smart Technology &amp; Energy Solutions</string>
+    <string name="lead_developer_label">Lead Developer</string>
+    <string name="lead_developer_name">Hayyu Ragea Chewaka</string>
+    <string name="primary_market">Ethiopia</string>
+    <string name="currency_code">ETB</string>
+    
+    <!-- Contact Info (Configurable Placeholders) -->
+    <string name="contact_phone_primary">+251 91 123 4567</string>
+    <string name="contact_phone_secondary">+251 11 654 3210</string>
+    <string name="contact_email">support@voltavia.com</string>
+    <string name="contact_website">https://voltavia.com</string>
+    <string name="contact_address">Bole Sub-City, Addis Ababa, Ethiopia</string>
+    <string name="office_hours">Mon – Fri: 8:30 AM – 5:30 PM (EAT) | Sat: 9:00 AM – 1:00 PM</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_services">Services</string>
+    <string name="nav_plans">Plans</string>
+    <string name="nav_projects">Projects</string>
+    <string name="nav_support">Support</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Mode Labels -->
+    <string name="mode_offline_demo">Offline Demo</string>
+    <string name="mode_production">Production Cloud</string>
+    <string name="status_saved_device">Saved on this device</string>
+    <string name="status_submitted">Submitted</string>
+    <string name="status_draft">Local Draft</string>
+    <string name="status_syncing">Syncing&#8230;</string>
+    <string name="status_failed">Submission Failed</string>
+
+    <!-- Home Screen -->
+    <string name="home_hero_title">Empowering Your Infrastructure</string>
+    <string name="home_hero_subtitle">Reliable software, enterprise networks, CCTV security, and solar energy systems in Ethiopia.</string>
+    <string name="home_action_quote">Request a Quote</string>
+    <string name="home_action_support">Get Support</string>
+    <string name="home_action_plans">View ICT Plans</string>
+    <string name="home_featured_services">Featured Services</string>
+    <string name="home_recent_activity">Recent Activity</string>
+    <string name="home_empty_activity_title">No Requests Yet</string>
+    <string name="home_empty_activity_desc">Your quotes, project milestones, and support tickets will appear here once created.</string>
+
+    <!-- Services Screen -->
+    <string name="services_title">Services Catalog</string>
+    <string name="services_subtitle">Enterprise technology and clean energy engineering</string>
+    <string name="search_services_placeholder">Search services or scope&#8230;</string>
+    <string name="category_all">All</string>
+    <string name="category_software">Software &amp; Web</string>
+    <string name="category_energy">Solar Energy</string>
+    <string name="category_security">CCTV &amp; Security</string>
+    <string name="category_network">Networking</string>
+    <string name="category_support">ICT Support</string>
+    <string name="service_detail_scope_title">Typical Scope of Work</string>
+    <string name="service_detail_steps_title">Standard Delivery Methodology</string>
+    <string name="service_detail_pricing_note">Note: Prices and estimates are indicative and subject to site survey or scope specification. Not a binding quote.</string>
+    <string name="action_request_this_service">Request Quote for this Service</string>
+
+    <!-- Plans & Estimates -->
+    <string name="plans_title">ICT Support Plans &amp; Estimates</string>
+    <string name="plans_subtitle">Transparent preventive and on-call maintenance packages</string>
+    <string name="billing_monthly">Monthly</string>
+    <string name="billing_yearly">Yearly (Save ~20%)</string>
+    <string name="plan_coverage_hours">Coverage Hours</string>
+    <string name="plan_response_time">Response SLA</string>
+    <string name="plan_scope_summary">Included Coverage</string>
+    <string name="plan_savings_tag">Annual Savings:</string>
+    <string name="include_vat_toggle">Include 15% VAT estimate</string>
+    <string name="vat_disclaimer">VAT calculation is indicative. Official invoice issued upon contract signing.</string>
+    <string name="action_select_plan">Select &amp; Request Quote</string>
+
+    <!-- Indicative Estimates -->
+    <string name="estimates_disclaimer_title">About Estimates</string>
+    <string name="estimates_disclaimer_body">Solar, CCTV, cabling, and bespoke software estimates depend on site measurements and bill of materials. Request a survey for exact pricing.</string>
+
+    <!-- Quote Request Form -->
+    <string name="quote_form_title">Request a Service Quote</string>
+    <string name="quote_form_subtitle">Provide details for an accurate project proposal</string>
+    <string name="label_customer_name">Full Name *</string>
+    <string name="label_phone">Phone Number (+251 or 09/07)</string>
+    <string name="label_email">Email Address</string>
+    <string name="label_organization">Organization / Company</string>
+    <string name="label_city">City / Site Location *</string>
+    <string name="label_service">Target Service *</string>
+    <string name="label_requirements">Project Requirements &amp; Scope *</string>
+    <string name="label_budget">Target Budget (ETB, Optional)</string>
+    <string name="label_target_date">Target Completion Date (Optional)</string>
+    <string name="hint_customer_name">e.g. Abebe Bikila</string>
+    <string name="hint_phone">e.g. +251 91 123 4567 or 0911234567</string>
+    <string name="hint_email">e.g. abebe@company.et</string>
+    <string name="hint_organization">e.g. Sheger Trading PLC</string>
+    <string name="hint_city">e.g. Addis Ababa, Bole</string>
+    <string name="hint_requirements">Describe what you need, such as camera count, building size, solar load, or software features&#8230;</string>
+    <string name="hint_budget">e.g. 150000</string>
+    <string name="action_save_draft">Save Draft</string>
+    <string name="action_review_submit">Review &amp; Submit</string>
+    <string name="action_submit_now">Confirm &amp; Submit Request</string>
+    <string name="action_edit_details">Back to Edit</string>
+    <string name="error_contact_required">At least one contact method (Phone or Email) is required.</string>
+    <string name="error_invalid_phone">Enter a valid Ethiopian phone number (+2519..., +2517..., 09..., or 07...).</string>
+    <string name="error_invalid_email">Enter a valid email address.</string>
+    <string name="error_name_required">Full name is required.</string>
+    <string name="error_city_required">City or site location is required.</string>
+    <string name="error_requirements_required">Please describe your requirements.</string>
+    <string name="quote_success_title">Quote Request Received</string>
+    <string name="quote_success_ref">Reference: %1$s</string>
+    <string name="quote_review_summary">Review Quote Details</string>
+
+    <!-- Projects -->
+    <string name="projects_title">Projects &amp; Milestones</string>
+    <string name="projects_subtitle">Track engineering deployment and handover progress</string>
+    <string name="project_stage_survey">1. Site Survey</string>
+    <string name="project_stage_design">2. Engineering Design</string>
+    <string name="project_stage_approval">3. Client Approval</string>
+    <string name="project_stage_deployment">4. Deployment</string>
+    <string name="project_stage_commissioning">5. Commissioning</string>
+    <string name="project_stage_handover">6. Handover &amp; SLA</string>
+    <string name="project_sample_tag">Sample Project – Demo</string>
+    <string name="project_progress">Progress: %1$d%%</string>
+
+    <!-- Support Tickets -->
+    <string name="support_title">Client Support Desk</string>
+    <string name="support_subtitle">Submit incidents, report technical faults, and track resolution</string>
+    <string name="action_create_ticket">Open New Ticket</string>
+    <string name="label_ticket_category">Issue Category *</string>
+    <string name="label_ticket_priority">Priority Level *</string>
+    <string name="label_ticket_subject">Subject / Summary *</string>
+    <string name="label_ticket_desc">Detailed Description *</string>
+    <string name="label_ticket_contact">Contact Person Name</string>
+    <string name="ticket_reply_placeholder">Write a reply or follow-up note&#8230;</string>
+    <string name="action_send_reply">Send Reply</string>
+    <string name="ticket_status_open">Open</string>
+    <string name="ticket_status_in_progress">In Progress</string>
+    <string name="ticket_status_waiting">Awaiting Client</string>
+    <string name="ticket_status_resolved">Resolved</string>
+    <string name="ticket_status_closed">Closed</string>
+    <string name="empty_tickets_title">No Support Tickets</string>
+    <string name="empty_tickets_desc">Experiencing an issue? Tap the button below to submit a support request directly to our engineering team.</string>
+
+    <!-- Profile & Contact -->
+    <string name="profile_title">Profile &amp; Company Contact</string>
+    <string name="profile_subtitle">Voltavia Technologies Client Assistance</string>
+    <string name="section_contact_actions">Quick Contact Actions</string>
+    <string name="action_call_primary">Call Support (+251 91 123 4567)</string>
+    <string name="action_call_office">Call Office (+251 11 654 3210)</string>
+    <string name="action_send_email">Send Email (support@voltavia.com)</string>
+    <string name="action_visit_web">Visit Website</string>
+    <string name="section_app_settings">Environment &amp; Demo Controls</string>
+    <string name="action_reset_demo">Reset Sample Demo Data</string>
+    <string name="reset_confirm_title">Reset Sample Data?</string>
+    <string name="reset_confirm_body">This will restore original sample projects, demo quotes, and support tickets. All local entries will be reset.</string>
+    <string name="action_confirm_reset">Reset Now</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="section_auth_prod">Production Account</string>
+    <string name="action_sign_in">Sign In with Customer Account</string>
+    <string name="action_sign_out">Sign Out</string>
+    <string name="staff_portal_notice">Note: Staff management and admin approvals are conducted via the Voltavia Internal Engineering Console.</string>
+    <string name="privacy_title">Privacy &amp; Data Security</string>
+    <string name="privacy_body">Voltavia Technologies values customer confidentiality. In Demo Mode, all data stays strictly on this device. In Production Cloud Mode, client data is protected by secure cloud rules and access control.</string>
+    <string name="dialog_no_dialer">No phone dialer application found on this device.</string>
+    <string name="dialog_no_email">No email application found on this device.</string>
+</resources>

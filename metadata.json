@@ -1,0 +1,7 @@
+{
+  "name": "Voltavia Client Portal",
+  "description": "Client service portal for Voltavia Technologies in Ethiopia: browse services, estimate plans, request quotes, track projects, and open support tickets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
